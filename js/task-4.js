@@ -17,7 +17,6 @@ function getShippingCost(country) {
       return `Sorry, there is no delivery to your country`;
   }
 
-  const hasSpam = _message.toLowerCase().includes(one) || _message.toLowerCase().includes(two);
   
 }
 console.log(getShippingCost("Australia")); // "Shipping to Australia will cost 170 credits"
