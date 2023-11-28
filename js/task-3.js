@@ -1,25 +1,19 @@
-function checkForSpam(_message) {
+function filterArray(numbers, value) {
 
-  const one = 'spam';
-  const two = 'sale';
+  let array = [];
 
-
-
-  const hasSpam = _message.toLowerCase().includes(one) || _message.toLowerCase().includes(two);
-  {return hasSpam;
+  for (let num of numbers) {
+    if (num > value) {
+      array.push(num);
+    }
+  }
+  return array;
+ 
 }
 
-  // if (hasSpam) {
-  //   console.log("true");
-  // } else {
-  //   console.log("false");
 
-  // }
-}
-console.log(checkForSpam("Latest technology news")); // false
-console.log(checkForSpam("JavaScript weekly newsletter")); // false
-console.log(checkForSpam("Get best sale offers now!")); // true
-console.log(checkForSpam("Amazing SalE, only tonight!")); // true
-console.log(checkForSpam("Trust me, this is not a spam message")); // true
-console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!")); // true
-console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
+console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
+console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
+console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
